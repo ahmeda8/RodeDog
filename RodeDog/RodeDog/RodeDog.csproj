@@ -69,13 +69,17 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="library\bark.cs" />
-    <Compile Include="library\packs.cs" />
+    <Compile Include="library\member.cs" />
+    <Compile Include="library\pack.cs" />
     <Compile Include="library\petstorefeature.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage1.xaml.cs">
       <DependentUpon>MainPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\memberdetail.xaml.cs">
+      <DependentUpon>memberdetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\mypage.xaml.cs">
       <DependentUpon>mypage.xaml</DependentUpon>
@@ -98,6 +102,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\memberdetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

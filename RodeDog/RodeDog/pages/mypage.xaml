@@ -21,7 +21,14 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="nearby pack">
                 <Grid>
-                    <my:Map Name="nearby_map" />
+                    <my:Map Name="nearby_map" CredentialsProvider="AkAKJhuiRDeqga7_uMa8lO8ELWmhnUjb4FNyro2vtnh5oUOViTiv097G9rAZPvGe" >
+                        <my:Pushpin Name="meposition">
+                            <StackPanel >
+                                <TextBlock Text="Me!!"/>
+                                
+                            </StackPanel>
+                        </my:Pushpin>
+                    </my:Map>
                 </Grid>
             </controls:PanoramaItem>
 
@@ -108,14 +115,14 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="40"/>
-                                        <ColumnDefinition Width="170"/>
-                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="160"/>
+                                        <ColumnDefinition Width="160"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Source="{Binding PackImage}" Grid.Column="0"/>
-                                    <TextBlock Text="{Binding Pack}" Grid.Column="1" Padding="6" FontSize="35" TextTrimming="WordEllipsis"/>
-                                    <TextBlock Text="{Binding From}" Grid.Column="2" Padding="5" FontSize="25" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding Pack}" Grid.Column="1" Padding="4" FontSize="20" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding From}" Grid.Column="2" Padding="4" FontSize="20" TextTrimming="WordEllipsis"/>
                                     <TextBlock Text="{Binding When}" Grid.Column="3"/>
                                 </Grid>
                             </DataTemplate>

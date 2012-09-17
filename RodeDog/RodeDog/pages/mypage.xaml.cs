@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Controls.Maps;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.Device.Location;
 
 namespace RodeDog
 {
@@ -74,7 +75,63 @@ namespace RodeDog
             }
 
             mypacks_list.ItemsSource = App.my_packs;
+           
+            GeoCoordinateWatcher gcw = new GeoCoordinateWatcher(GeoPositionAccuracy.Default);
+            gcw.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(gcw_PositionChanged);
+            gcw.MovementThreshold = 0.1;
+            gcw.Start();
+            nearby_map.ZoomLevel = 14;
+
+            barktrakersent_list.ItemsSource = App.barks_sent;
+            barktrakerrcvd_list.ItemsSource = App.barks_rcvd;
+           
+            
 #endif
+        }
+
+        void gcw_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
+        {
+            nearby_map.Children.Clear();
+            nearby_map.Center = e.Position.Location;
+            StackPanel sp1 = new StackPanel();
+            TextBlock name1 = new TextBlock { Text = "Me" };
+            TextBlock pack1 = new TextBlock { Text = "!!" };
+            sp1.Children.Add(name1);
+            sp1.Children.Add(pack1);
+            meposition.Content = sp1;
+                    
+            meposition.Location = e.Position.Location;
+            nearby_map.Children.Add(meposition);
+            //MapLayer pushpin_layer = new MapLayer();
+            foreach (Pack p in App.my_packs)
+            {
+                foreach (member m in p.Members)
+                {
+                    StackPanel sp = new StackPanel();
+                    sp.Tag = m.ID;
+                    sp.Tap += new EventHandler<GestureEventArgs>(sp_Tap);
+                    TextBlock name = new TextBlock { Text = m.Name };
+                    TextBlock pack = new TextBlock { Text = m.Pack };
+                    sp.Children.Add(name);
+                    sp.Children.Add(pack);
+                    Pushpin mypp = new Pushpin();
+                    mypp.Content = sp;
+                    Random rand = new Random();
+                    double r = rand.NextDouble()/40;
+                    double s = rand.NextDouble()/40;
+                    mypp.Location = new GeoCoordinate(e.Position.Location.Latitude + r, e.Position.Location.Longitude - r);
+                    //pushpin_layer.AddChild(mypp, new GeoCoordinate(e.Position.Location.Latitude+r,e.Position.Location.Longitude+s));
+                    nearby_map.Children.Add(mypp);
+                    
+                }
+            }
+            //nearby_map.Children.Add(pushpin_layer);
+        }
+
+        void sp_Tap(object sender, GestureEventArgs e)
+        {
+            StackPanel sp = sender as StackPanel;
+            NavigationService.Navigate(new Uri("/pages/memberdetail.xaml?id=" + sp.Tag, UriKind.Relative));
         }
 
         void Article_Tap(object sender, GestureEventArgs e)

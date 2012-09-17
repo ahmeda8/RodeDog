@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+using System.Collections.Generic;
 
 namespace RodeDog
 {
@@ -19,5 +13,11 @@ namespace RodeDog
         public string Count { get; set; }
         public bool isPrivate { get; set; }
         public string Private { get; set; }
+        public LinkedList<member> Members { get; set; }
+
+        public Pack()
+        {
+            Members = new LinkedList<member>();
+        }
     }
 }
