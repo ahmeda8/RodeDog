@@ -68,16 +68,23 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="library\bark.cs" />
     <Compile Include="library\packs.cs" />
     <Compile Include="library\petstorefeature.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\login.xaml.cs">
-      <DependentUpon>login.xaml</DependentUpon>
+    <Compile Include="MainPage1.xaml.cs">
+      <DependentUpon>MainPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\mypage.xaml.cs">
       <DependentUpon>mypage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\packdetails.xaml.cs">
+      <DependentUpon>packdetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\petdetails.xaml.cs">
+      <DependentUpon>petdetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,10 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="pages\login.xaml">
+    <Page Include="MainPage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,8 +105,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\packdetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\petdetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets_small\horse.psd" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
@@ -107,6 +123,52 @@
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="assets_small\bear.png" />
+    <Resource Include="assets_small\bird.png" />
+    <Resource Include="assets_small\chicken.png" />
+    <Resource Include="assets_small\cow.png" />
+    <Resource Include="assets_small\dog.png" />
+    <Resource Include="assets_small\dog1.png" />
+    <Resource Include="assets_small\dog2.png" />
+    <Resource Include="assets_small\dog3.png" />
+    <Resource Include="assets_small\dog4.png" />
+    <Resource Include="assets_small\dog5.png" />
+    <Resource Include="assets_small\dog6.png" />
+    <Resource Include="assets_small\dog7.png" />
+    <Resource Include="assets_small\dog8.png" />
+    <Resource Include="assets_small\dog9.png" />
+    <Resource Include="assets_small\dolphin.png" />
+    <Resource Include="assets_small\elephant.png" />
+    <Resource Include="assets_small\frog.png" />
+    <Resource Include="assets_small\horse.png" />
+    <Resource Include="assets_small\lion.png" />
+    <Resource Include="assets_small\owl.png" />
+    <Resource Include="assets_small\pig.png" />
+    <Resource Include="assets_small\sheep.png" />
+    <Resource Include="assets_big\bear.png" />
+    <Resource Include="assets_big\bird.png" />
+    <Resource Include="assets_big\chicken.png" />
+    <Resource Include="assets_big\cow.png" />
+    <Resource Include="assets_big\dog.png" />
+    <Resource Include="assets_big\dog1.png" />
+    <Resource Include="assets_big\dog2.png" />
+    <Resource Include="assets_big\dog3.png" />
+    <Resource Include="assets_big\dog4.png" />
+    <Resource Include="assets_big\dog5.png" />
+    <Resource Include="assets_big\dog6.png" />
+    <Resource Include="assets_big\dog7.png" />
+    <Resource Include="assets_big\dog8.png" />
+    <Resource Include="assets_big\dog9.png" />
+    <Resource Include="assets_big\dolphin.png" />
+    <Resource Include="assets_big\elephant.png" />
+    <Resource Include="assets_big\horse.png" />
+    <Resource Include="assets_big\lion.png" />
+    <Resource Include="assets_big\owl.png" />
+    <Resource Include="assets_big\pig.png" />
+    <Resource Include="assets_big\rog.png" />
+    <Resource Include="assets_big\sheep.png" />
+    <Resource Include="assets_big\snake.png" />
+    <Resource Include="assets_big\tiger.png" />
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

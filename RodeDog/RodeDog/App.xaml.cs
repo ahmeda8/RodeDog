@@ -12,11 +12,19 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace RodeDog
 {
     public partial class App : Application
     {
+#if DEBUG
+        public static ObservableCollection<Pack> search_packs = new ObservableCollection<Pack>();
+        public static ObservableCollection<Pack> my_packs = new ObservableCollection<Pack>();
+        public static ObservableCollection<bark> barks = new ObservableCollection<bark>();
+#endif
+            
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
@@ -63,6 +71,14 @@ namespace RodeDog
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+#if DEBUG
+            search_packs.Add(new Pack { Name = "Abrar", PackImage = "/RodeDog;component/assets_small/bear.png", Count = "(14,320)", ID = 0 });
+            search_packs.Add(new Pack { Name = "Denise", PackImage = "/RodeDog;component/assets_small/bird.png", Count = "(143)", ID = 1 });
+            search_packs.Add(new Pack { Name = "Victoria", PackImage = "/RodeDog;component/assets_small/chicken.png", Count = "(32)", ID = 2 });
+            search_packs.Add(new Pack { Name = "David", PackImage = "/RodeDog;component/assets_small/cow.png", Count = "(320)", ID = 3 });
+            search_packs.Add(new Pack { Name = "Vak", PackImage = "/RodeDog;component/assets_small/dog.png", Count = "(432)", ID = 4 });
+            search_packs.Add(new Pack { Name = "Jutin", PackImage = "/RodeDog;component/assets_small/dog1.png", Count = "(4,320)", ID = 5 });
+#endif
         }
 
         // Code to execute when the application is activated (brought to foreground)

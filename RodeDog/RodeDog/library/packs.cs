@@ -11,11 +11,13 @@ using System.Windows.Shapes;
 
 namespace RodeDog
 {
-    public class Packs
+    public class Pack
     {
-        public Image PackImage { get; set; }
+        public int ID { get; set; }
+        public string PackImage { get; set; }
         public string Name { get; set; }
+        public string Count { get; set; }
         public bool isPrivate { get; set; }
-        public Image Private { get; set; }
+        public string Private { get; set; }
     }
 }

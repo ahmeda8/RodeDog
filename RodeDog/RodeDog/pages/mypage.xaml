@@ -28,7 +28,24 @@
             <!--Panorama item two-->
             <controls:PanoramaItem Header="my packs">
                 <Grid>
-                    <ListBox Name="mypacks_list"/>
+                    <ListBox Name="mypacks_list">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="230"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding PackImage}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="1" Padding="6" FontSize="35" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding Count}" Grid.Column="2" Padding="5" FontSize="25" />
+                                    <Image Source="{Binding Private}" Grid.Column="3"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </controls:PanoramaItem>
 
@@ -45,18 +62,20 @@
                     </Grid.ColumnDefinitions>
                     <TextBox Name="search_txt" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
                     <Button Name="search_btn" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="S"/>
-                    <ListBox Name="search_list" Grid.Row="1" Grid.ColumnSpan="2">
+                    <ListBox Name="search_list" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="search_list_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="230"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding Image}" Grid.Column="0"/>
-                                    <TextBlock Text="{Binding Name}" Grid.Column="1"/>
-                                    <Image Source="{Binding Private}" Grid.Column="2"/>
+                                    <Image Source="{Binding PackImage}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="1" Padding="6" FontSize="35" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding Count}" Grid.Column="2" Padding="5" FontSize="25" />
+                                    <Image Source="{Binding Private}" Grid.Column="3"/>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -68,10 +87,59 @@
             <controls:PanoramaItem Header="pet store">
                 <Grid>
                     <ScrollViewer >
-                        <Grid ShowGridLines="True" Name="petstore_grid">
+                        <Grid Name="petstore_grid">
                             
                         </Grid>
                     </ScrollViewer>
+                </Grid>
+            </controls:PanoramaItem>
+            <!--Panorama item five-->
+            <controls:PanoramaItem Header="bark tracker">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Sent:" Style="{StaticResource PhoneTextLargeStyle}" Grid.Row="0"/>
+                    <ListBox Name="barktrakersent_list" Grid.Row="1">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding PackImage}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Pack}" Grid.Column="1" Padding="6" FontSize="35" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding From}" Grid.Column="2" Padding="5" FontSize="25" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding When}" Grid.Column="3"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock Text="Received:" Style="{StaticResource PhoneTextLargeStyle}" Grid.Row="2"/>
+                    <ListBox Name="barktrakerrcvd_list" Grid.Row="3">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding PackImage}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Pack}" Grid.Column="1" Padding="6" FontSize="35" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding From}" Grid.Column="2" Padding="5" FontSize="25" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding When}" Grid.Column="3"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </controls:PanoramaItem>
         </controls:Panorama>

@@ -11,26 +11,18 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
-namespace RodeDog
+namespace RodeDog.Pages
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class login : PhoneApplicationPage
     {
-        // Constructor
-        public MainPage()
+        public login()
         {
             InitializeComponent();
         }
 
         private void login_btn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/pages/login.xaml?action=login", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/pages/mypage.xaml",UriKind.Relative));
         }
-
-        private void register_btn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/pages/login.xaml?action=register",UriKind.Relative));
-        }
-
-       
     }
 }

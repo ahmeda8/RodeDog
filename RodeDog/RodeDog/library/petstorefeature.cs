@@ -14,5 +14,6 @@ namespace RodeDog
     public class petstorefeature
     {
         public Image Article { get; set; }
+        public string Name { get; set; }
     }
 }
