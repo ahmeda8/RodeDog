@@ -23,7 +23,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="4,17,12,28" Width="456" Height="116" Grid.Column="1" Grid.ColumnSpan="3">
             <StackPanel.Background>
-                <ImageBrush Stretch="Fill" ImageSource="application_top_title.png"/>
+                <ImageBrush Stretch="Fill" ImageSource="/RodeDog;component/Assets/application_top_title.png"/>
             </StackPanel.Background>
             <TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF232323" Width="456"/>
         </StackPanel>
@@ -31,7 +31,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.Background>
-                <ImageBrush ImageSource="Home_Grid_Back.png" Stretch="Fill"/>
+                <ImageBrush ImageSource="/RodeDog;component/Assets/Home_Grid_Back.png" Stretch="Fill"/>
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -43,8 +43,8 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="Username:" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource PhoneTextLargeStyle}" />
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="Password:" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource PhoneTextLargeStyle}" />
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Username:" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource PhoneTextLargeStyle}" Foreground="{StaticResource PhoneAccentBrush}" />
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Password:" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource PhoneTextLargeStyle}" Foreground="{StaticResource PhoneAccentBrush}" />
             <TextBox Grid.Column="1" Grid.Row="0" Name="login_txt" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
             <PasswordBox Grid.Column="1" Grid.Row="1" Name="pass_txt" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
             <Button Name="login_btn" Content="Login" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Click="login_btn_Click" Background="Black" Foreground="White"/>

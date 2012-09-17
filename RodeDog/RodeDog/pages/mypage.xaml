@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"  
-    x:Class="RodeDog.pages.mypage"
+    x:Class="RodeDog.mypage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -27,17 +27,52 @@
 
             <!--Panorama item two-->
             <controls:PanoramaItem Header="my packs">
-                <Grid/>
+                <Grid>
+                    <ListBox Name="mypacks_list"/>
+                </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item three-->
-            <controls:PanoramaItem Header="my stats">
-                <Grid/>
+            <controls:PanoramaItem Header="search packs">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="search_txt" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                    <Button Name="search_btn" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="S"/>
+                    <ListBox Name="search_list" Grid.Row="1" Grid.ColumnSpan="2">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Image}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="1"/>
+                                    <Image Source="{Binding Private}" Grid.Column="2"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item four-->
-            <controls:PanoramaItem Header="shop">
-                <Grid/>
+            <controls:PanoramaItem Header="pet store">
+                <Grid>
+                    <ScrollViewer >
+                        <Grid ShowGridLines="True" Name="petstore_grid">
+                            
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
             </controls:PanoramaItem>
         </controls:Panorama>
     </Grid>
