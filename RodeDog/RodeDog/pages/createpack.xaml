@@ -30,25 +30,29 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Grid.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="/RodeDog;component/Home_Grid_Back.png"/>
+        	</Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="0.127*"/>
+                <RowDefinition Height="0.138*"/>
+                <RowDefinition Height="0.166*"/>
+                <RowDefinition Height="0.137*"/>
+                <RowDefinition Height="0.161*"/>
+                <RowDefinition Height="0.27*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Pack Name" Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" />
+            <TextBlock Text="Pack Name" Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}" />
             <Image Grid.Row="1" Grid.Column="0" Name="img" />
-            <TextBlock Text="Invite friends" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" />
+            <TextBlock Text="Invite friends" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}" />
             <TextBox Name="packname" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
-            <CheckBox Name="private" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Make Private" Grid.ColumnSpan="2" FontSize="30" />
-            <Button Name="photo" Content="Choose photo" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Click="photo_Click"/>
-            <Button Name="invite" Content="Invite" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Click="invite_Click"/>
-            <Button Name="save" Content="Save" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Center" Click="save_Click"/>
+            <CheckBox Name="private" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Make Private" Grid.ColumnSpan="2" FontSize="30" Foreground="{StaticResource PhoneAccentBrush}" />
+            <Button Name="photo" Content="Choose photo" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Click="photo_Click" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <Button Name="invite" Content="Invite" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Click="invite_Click" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <Button Name="save" Content="Save" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Center" Click="save_Click" Foreground="{StaticResource PhoneAccentBrush}"/>
         </Grid>
     </Grid>
  

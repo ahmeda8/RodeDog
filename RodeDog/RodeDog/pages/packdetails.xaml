@@ -30,24 +30,28 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Grid.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="/RodeDog;component/Home_Grid_Back.png"/>
+        	</Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="0.199*"/>
+                <RowDefinition Height="0.094*"/>
+                <RowDefinition Height="0.097*"/>
+                <RowDefinition Height="0.115*"/>
+                <RowDefinition Height="0.147*"/>
+                <RowDefinition Height="0.348*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Image Name="pack_image" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Owner" Style="{StaticResource PhoneTextExtraLargeStyle}" VerticalAlignment="Center"/>
-            <TextBlock Name="pack_name" Grid.Row="1" Grid.Column="1" Text="Name" Style="{StaticResource PhoneTextExtraLargeStyle}" VerticalAlignment="Center"/>
-            <TextBlock Text="Private" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextExtraLargeStyle}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Owner" Style="{StaticResource PhoneTextExtraLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Name="pack_name" Grid.Row="1" Grid.Column="1" Text="Name" Style="{StaticResource PhoneTextExtraLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="Private" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextExtraLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
             <TextBlock Name="private_Txt" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextExtraLargeStyle}"  VerticalAlignment="Center"/>
-            <Button Name="join_btn" Content="join" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Click="join_btn_Click"/>
-            <Button Name="members_btn" Content="view members" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+            <Button Name="join_btn" Content="join" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Click="join_btn_Click" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <Button Name="members_btn" Content="view members" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
         </Grid>
     </Grid>
  

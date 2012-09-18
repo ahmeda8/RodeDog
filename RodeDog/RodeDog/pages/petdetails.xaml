@@ -30,16 +30,20 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Grid.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="/RodeDog;component/Home_Grid_Back.png"/>
+        	</Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="71"/>
+                <RowDefinition Height="131"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="92"/>
+                <RowDefinition Height="206"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Purchase your bark" Style="{StaticResource PhoneTextLargeStyle}" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="Purchase your bark" Style="{StaticResource PhoneTextLargeStyle}" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
             <Image Name="pet_image" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-            <TextBlock Text="$ 0.99" Style="{StaticResource PhoneTextExtraLargeStyle}" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Button Name="buy_btn" Content="buy" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
+            <TextBlock Text="$ 0.99" Style="{StaticResource PhoneTextExtraLargeStyle}" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <Button Name="buy_btn" Content="buy" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Foreground="{StaticResource PhoneAccentBrush}"/>
         </Grid>
     </Grid>
  

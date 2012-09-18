@@ -34,10 +34,10 @@
                 <ImageBrush ImageSource="/RodeDog;component/Assets/Home_Grid_Back.png" Stretch="Fill"/>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -47,8 +47,9 @@
             <TextBlock Grid.Column="0" Grid.Row="1" Text="Password:" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource PhoneTextLargeStyle}" Foreground="{StaticResource PhoneAccentBrush}" />
             <TextBox Grid.Column="1" Grid.Row="0" Name="login_txt" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
             <PasswordBox Grid.Column="1" Grid.Row="1" Name="pass_txt" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-            <Button Name="login_btn" Content="Login" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Click="login_btn_Click" Background="Black" Foreground="White"/>
-            <Button Name="forgot_btn" Content="forgot password" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Background="Black" Foreground="White"/>
+            <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Source="Assets/sharesection.png"/>
+            <Button Name="login_btn" Content="Login" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Click="login_btn_Click" Background="Black" Foreground="White"/>
+            <Button Name="forgot_btn" Content="forgot password" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Background="Black" Foreground="White"/>
         </Grid>
     </Grid>
  

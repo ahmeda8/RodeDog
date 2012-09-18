@@ -30,24 +30,27 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Grid.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="/RodeDog;component/Home_Grid_Back.png"/>
+        	</Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="74"/>
+                <RowDefinition Height="72"/>
+                <RowDefinition Height="94"/>
+                <RowDefinition Height="112"/>
+                <RowDefinition Height="398"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Pack" Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
-            <TextBlock Text="Name" Grid.Row="1" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
-            <TextBlock Text="Texting" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
-            <Button Name="bark" Content="Send bark" Click="bark_Click" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
-            <TextBlock Text="Pack" Grid.Row="0" Grid.Column="1" Name="packname" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
-            <TextBlock Text="Name" Grid.Row="1" Grid.Column="1" Name="memname" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
-            <TextBlock Text="Yes" Grid.Row="2" Grid.Column="1" Name="istext" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
+            <TextBlock Text="Pack" Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="Name" Grid.Row="1" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="Texting" Grid.Row="2" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <Button Name="bark" Content="Send bark" Click="bark_Click" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="Pack" Grid.Row="0" Grid.Column="1" Name="packname" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="Name" Grid.Row="1" Grid.Column="1" Name="memname" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="Yes" Grid.Row="2" Grid.Column="1" Name="istext" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
             
         </Grid>
     </Grid>

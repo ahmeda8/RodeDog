@@ -138,6 +138,12 @@
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\100x100gradient%281%29.png" />
+    <Resource Include="Assets\100x100gradient.png" />
+    <Resource Include="Assets\100x100pattern.png" />
+    <Resource Include="Assets\100x100pattern3.png" />
+    <Resource Include="Assets\30x30magnify.png" />
+    <Resource Include="Assets\sharesection.png" />
     <Resource Include="assets_small\bear.png" />
     <Resource Include="assets_small\bird.png" />
     <Resource Include="assets_small\chicken.png" />

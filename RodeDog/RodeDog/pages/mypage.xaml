@@ -17,6 +17,9 @@
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
         <controls:Panorama Title="rode dog">
+        	<controls:Panorama.Background>
+        		<ImageBrush ImageSource="/RodeDog;component/Assets/100x100gradient.png" Stretch="UniformToFill"/>
+        	</controls:Panorama.Background>
 
             <!--Panorama item one-->
             <controls:PanoramaItem Header="nearby pack">
@@ -63,6 +66,9 @@
 
             <!--Panorama item three-->
             <controls:PanoramaItem Header="search packs">
+            	<controls:PanoramaItem.Background>
+            		<ImageBrush Stretch="Fill"/>
+            	</controls:PanoramaItem.Background>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
@@ -73,7 +79,11 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <TextBox Name="search_txt" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
-                    <Button Name="search_btn" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="S"/>
+                    <Button Name="search_btn" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="" Height="70" >
+                    	<Button.Background>
+                    		<ImageBrush Stretch="None" ImageSource="/RodeDog;component/Assets/30x30magnify.png"/>
+                    	</Button.Background>
+                    </Button>
                     <ListBox Name="search_list" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="search_list_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
