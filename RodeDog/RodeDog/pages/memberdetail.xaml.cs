@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
 namespace RodeDog.pages
 {
@@ -25,6 +26,10 @@ namespace RodeDog.pages
         private void bark_Click(object sender, RoutedEventArgs e)
         {
             App.barks_sent.Add(new bark { When = DateTime.Now.ToShortDateString(), From = memname.Text, Pack = packname.Text });
+            ShellToast st = new ShellToast();
+            st.Title = "Bark Bark:";
+            st.Content = "from " + memname.Text;
+            st.Show();
             NavigationService.GoBack();
         }
 

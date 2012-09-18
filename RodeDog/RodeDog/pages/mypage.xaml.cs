@@ -36,15 +36,15 @@ namespace RodeDog
             petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/bird.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bird.png" });
             petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/chicken.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/chicken.png" });
             petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/cow.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/cow.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bear.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog1.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bear.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog2.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bear.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog3.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bear.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog4.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bear.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog5.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/bear.png" });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dolphin.png", UriKind.Relative)) } });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/elephant.png", UriKind.Relative)) } });
-            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/lion.png", UriKind.Relative)) } });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dog.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog1.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dog1.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog2.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dog2.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog3.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dog3.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog4.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dog4.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dog5.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dog5.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/dolphin.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/dolphin.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/elephant.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/elephant.png" });
+            petstore_list.Add(new petstorefeature { Article = new Image { Source = new BitmapImage(new Uri("/RodeDog;component/assets_big/lion.png", UriKind.Relative)) }, Name = "/RodeDog;component/assets_big/lion.png" });
 
             int cols = 3;
             double rows = Math.Ceiling((double)(petstore_list.Count / cols));
@@ -119,7 +119,10 @@ namespace RodeDog
                     Random rand = new Random();
                     double r = rand.NextDouble()/40;
                     double s = rand.NextDouble()/40;
-                    mypp.Location = new GeoCoordinate(e.Position.Location.Latitude + r, e.Position.Location.Longitude - r);
+                    if(rand.Next(0,1) == 1)
+                        mypp.Location = new GeoCoordinate(e.Position.Location.Latitude + r, e.Position.Location.Longitude + s);
+                    else
+                        mypp.Location = new GeoCoordinate(e.Position.Location.Latitude - r, e.Position.Location.Longitude - s);
                     //pushpin_layer.AddChild(mypp, new GeoCoordinate(e.Position.Location.Latitude+r,e.Position.Location.Longitude+s));
                     nearby_map.Children.Add(mypp);
                     
@@ -150,6 +153,11 @@ namespace RodeDog
             {
                 NavigationService.Navigate(new Uri("/pages/packdetails.xaml?id="+p.ID,UriKind.Relative));
             }
+        }
+
+        private void createpack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/pages/createpack.xaml", UriKind.Relative));
         }
     }
 }

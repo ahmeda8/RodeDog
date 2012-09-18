@@ -35,7 +35,12 @@
             <!--Panorama item two-->
             <controls:PanoramaItem Header="my packs">
                 <Grid>
-                    <ListBox Name="mypacks_list">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Name="createpack" Content="Create Pack" Click="createpack_Click"/>
+                    <ListBox Name="mypacks_list" Grid.Row="1">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -134,14 +139,14 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="40"/>
-                                        <ColumnDefinition Width="170"/>
-                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="160"/>
+                                        <ColumnDefinition Width="160"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Source="{Binding PackImage}" Grid.Column="0"/>
-                                    <TextBlock Text="{Binding Pack}" Grid.Column="1" Padding="6" FontSize="35" TextTrimming="WordEllipsis"/>
-                                    <TextBlock Text="{Binding From}" Grid.Column="2" Padding="5" FontSize="25" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding Pack}" Grid.Column="1" Padding="4" FontSize="20" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding From}" Grid.Column="2" Padding="4" FontSize="20" TextTrimming="WordEllipsis"/>
                                     <TextBlock Text="{Binding When}" Grid.Column="3"/>
                                 </Grid>
                             </DataTemplate>
