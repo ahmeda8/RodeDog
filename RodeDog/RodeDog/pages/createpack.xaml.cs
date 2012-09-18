@@ -32,7 +32,8 @@ namespace RodeDog.pages
         void ptsk_Completed(object sender, PhotoResult e)
         {
             BitmapImage bi = new BitmapImage();
-            bi.SetSource(e.ChosenPhoto);
+            if(e.ChosenPhoto !=null)
+                bi.SetSource(e.ChosenPhoto);
             img.Source = bi;
         }
 

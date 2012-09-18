@@ -81,6 +81,7 @@ namespace RodeDog
             gcw.MovementThreshold = 0.1;
             gcw.Start();
             nearby_map.ZoomLevel = 14;
+            PopulateMapPushPins(gcw.Position);
 
             barktrakersent_list.ItemsSource = App.barks_sent;
             barktrakerrcvd_list.ItemsSource = App.barks_rcvd;
@@ -91,16 +92,22 @@ namespace RodeDog
 
         void gcw_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
         {
+            PopulateMapPushPins(e.Position);
+        }
+
+        private void PopulateMapPushPins(GeoPosition<GeoCoordinate> e)
+        {
             nearby_map.Children.Clear();
-            nearby_map.Center = e.Position.Location;
+            
+            nearby_map.Center = e.Location;
             StackPanel sp1 = new StackPanel();
-            TextBlock name1 = new TextBlock { Text = "Me" };
+            TextBlock name1 = new TextBlock { Text = "I am Here" };
             TextBlock pack1 = new TextBlock { Text = "!!" };
             sp1.Children.Add(name1);
             sp1.Children.Add(pack1);
             meposition.Content = sp1;
-                    
-            meposition.Location = e.Position.Location;
+
+            meposition.Location = e.Location;
             nearby_map.Children.Add(meposition);
             //MapLayer pushpin_layer = new MapLayer();
             foreach (Pack p in App.my_packs)
@@ -117,20 +124,18 @@ namespace RodeDog
                     Pushpin mypp = new Pushpin();
                     mypp.Content = sp;
                     Random rand = new Random();
-                    double r = rand.NextDouble()/40;
-                    double s = rand.NextDouble()/40;
-                    if(rand.Next(0,1) == 1)
-                        mypp.Location = new GeoCoordinate(e.Position.Location.Latitude + r, e.Position.Location.Longitude + s);
+                    double r = rand.NextDouble() / 40;
+                    double s = rand.NextDouble() / 40;
+                    if (rand.Next(0, 1) == 1)
+                        mypp.Location = new GeoCoordinate(e.Location.Latitude + r, e.Location.Longitude + s);
                     else
-                        mypp.Location = new GeoCoordinate(e.Position.Location.Latitude - r, e.Position.Location.Longitude - s);
+                        mypp.Location = new GeoCoordinate(e.Location.Latitude - r, e.Location.Longitude - s);
                     //pushpin_layer.AddChild(mypp, new GeoCoordinate(e.Position.Location.Latitude+r,e.Position.Location.Longitude+s));
                     nearby_map.Children.Add(mypp);
-                    
+
                 }
             }
-            //nearby_map.Children.Add(pushpin_layer);
         }
-
         void sp_Tap(object sender, GestureEventArgs e)
         {
             StackPanel sp = sender as StackPanel;
