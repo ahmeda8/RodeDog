@@ -74,12 +74,12 @@ namespace RodeDog
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
 #if DEBUG
-            search_packs.Add(new Pack { Name = "Deulce pack", PackImage = "/RodeDog;component/assets_small/bear.png", Count = "(14,320)", ID = 0 });
-            search_packs.Add(new Pack { Name = "Denise", PackImage = "/RodeDog;component/assets_small/bird.png", Count = "(143)", ID = 1 });
-            search_packs.Add(new Pack { Name = "Victoria", PackImage = "/RodeDog;component/assets_small/chicken.png", Count = "(32)", ID = 2 });
-            search_packs.Add(new Pack { Name = "David", PackImage = "/RodeDog;component/assets_small/cow.png", Count = "(320)", ID = 3 });
-            search_packs.Add(new Pack { Name = "Vak", PackImage = "/RodeDog;component/assets_small/dog.png", Count = "(432)", ID = 4 });
-            search_packs.Add(new Pack { Name = "Jutin", PackImage = "/RodeDog;component/assets_small/dog1.png", Count = "(4,320)", ID = 5 });
+            search_packs.Add(new Pack { Name = "Supreme pack", PackImage = "/RodeDog;component/assets_small/bear.png", Count = "(14,320)", ID = 0 });
+            search_packs.Add(new Pack { Name = "Denise's pack", PackImage = "/RodeDog;component/assets_small/bird.png", Count = "(143)", ID = 1 });
+            search_packs.Add(new Pack { Name = "Victoria's pack", PackImage = "/RodeDog;component/assets_small/chicken.png", Count = "(32)", ID = 2 });
+            search_packs.Add(new Pack { Name = "Davidtron", PackImage = "/RodeDog;component/assets_small/cow.png", Count = "(320)", ID = 3 });
+            search_packs.Add(new Pack { Name = "Vakcious", PackImage = "/RodeDog;component/assets_small/dog.png", Count = "(432)", ID = 4 });
+            search_packs.Add(new Pack { Name = "JustinFever", PackImage = "/RodeDog;component/assets_small/dog1.png", Count = "(4,320)", ID = 5 });
 
             search_packs.First().Members.AddFirst(new member { Name = "Abrar", Pack = search_packs.First().Name,ID=0 });
             search_packs.First().Members.AddFirst(new member { Name = "Melissa", Pack = search_packs.First().Name, ID = 1 });
